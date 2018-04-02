@@ -11,12 +11,13 @@ import { Container,
   Left,
   Right,
   Body,
-  Icon,
   Text,
   Drawer,
   Card,
   CardItem,
-  Tab, Tabs, TabHeading, ScrollableTab, List, ListItem } from 'native-base';
+  Tab, Tabs, TabHeading, ScrollableTab, List, ListItem,
+  Badge } from 'native-base';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { StackNavigator } from 'react-navigation';
 import Sidebar from './Sidebar';
 import moment from 'moment'
@@ -40,7 +41,7 @@ export default class DashboardDetails extends React.Component {
       });
       console.log("accessToken from AsyncStorage")
       console.log(this.state.accessToken)
-      
+
   }
 
   componentWillReceiveProps(nextProps){
@@ -60,14 +61,19 @@ export default class DashboardDetails extends React.Component {
         {
           Object.keys(this.props.roomDetails).length > 0 ? (
               Object.keys(this.state.roomDetails).map((key) => (
-
-                 <ListItem>
-                   {console.log("in roomDetails list")}
-                   {console.log(that.state.roomDetails[key].organizer)}
-                   <span></span>
-                   <Text>{that.state.roomDetails[key].organizer.emailAddress.name}</Text>
-                   <Text>{`${moment(that.state.roomDetails[key].start.dateTime).utcOffset(+660).format('Do MMM, h:mm a')} - ${moment(that.state.roomDetails[key].end.dateTime).utcOffset(+660).format('h:mm a')}`}</Text>
-                </ListItem>
+                  that.state.roomDetails[key].map(function(item, index){
+                    return(
+                      <ListItem icon>
+                        <Left>
+                          <Icon name="circle" />
+                        </Left>
+                        <Body>
+                          <Text>{item.organizer.emailAddress.name}</Text>
+                          <Text>{`${moment(item.start.dateTime).utcOffset(+660).format('Do MMM, h:mm a')} - ${moment(item.end.dateTime).utcOffset(+660).format('h:mm a')}`}</Text>
+                        </Body>
+                      </ListItem>
+                    )
+                  })
               ))
             ) : ('')
         }

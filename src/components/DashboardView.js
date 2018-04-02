@@ -28,8 +28,8 @@ export default class DashboardView extends React.Component {
       console.log("in constructor Dashboard View")
       super(props);
       console.log(props)
-      this.state = { accessToken: null, 
-                    currentDate: moment(new Date()).format('Do MMMM YYYY'), 
+      this.state = { accessToken: null,
+                    currentDate: moment(new Date()).format('Do MMMM YYYY'),
                     currentTime: moment(new Date()).format('LT'),
                     roomsList: this.props.roomsList,
                     roomDetails: this.props.roomDetails
@@ -77,18 +77,19 @@ export default class DashboardView extends React.Component {
                   console.log(room)
                   return (
                     <Tab heading={room.name}>
-                      
+
                       <DashboardDetails {...that.props} roomId={room.address} roomName={room.name} roomDetails={that.state.roomDetails} />
-                      
+
                     </Tab>
                   )
                 })
             }
           </Tabs>
           <Footer>
-            <Text>{this.state.currentTime}</Text>
-            <Text></Text>
-            <Text>{this.state.currentDate}</Text>
+            <Content>
+              <Text>{this.state.currentTime}</Text>
+              <Text>{this.state.currentDate}</Text>
+            </Content>
           </Footer>
 
       </Container>
