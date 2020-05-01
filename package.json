@@ -14,7 +14,9 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "jest",
-    "react-devtools": "react-devtools"
+    "react-devtools": "react-devtools",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "jest": {
     "preset": "jest-expo"
@@ -36,6 +38,8 @@
     "redux": "^3.7.2",
     "redux-devtools": "^3.4.1",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
-  }
+    "redux-thunk": "^2.2.0",
+    "snyk": "^1.316.1"
+  },
+  "snyk": true
 }
