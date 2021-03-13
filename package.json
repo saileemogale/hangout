@@ -28,7 +28,7 @@
     "object-assign": "^4.1.1",
     "react": "^16.3.0-alpha.1",
     "react-dom": "^16.3.0",
-    "react-native": "0.54.0",
+    "react-native": "0.64.0",
     "react-native-azure-ad": "^0.2.4",
     "react-navigation": "^1.5.8",
     "react-navigation-redux-helpers": "^1.0.3",
