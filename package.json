@@ -30,11 +30,11 @@
     "react-dom": "^16.3.0",
     "react-native": "0.54.0",
     "react-native-azure-ad": "^0.2.4",
-    "react-navigation": "^1.5.8",
+    "react-navigation": "^5.0.0",
     "react-navigation-redux-helpers": "^1.0.3",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
-    "redux-devtools": "^3.4.1",
+    "redux-devtools": "^3.7.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"
   }
